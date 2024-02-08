@@ -21,6 +21,7 @@ type server struct {
 
 func (s *server) Create(ctx context.Context, req *desc.ChatCreateRequest) (*desc.ChatCreateResponse, error) {
 	log.Printf("Usernames: %v", req.GetUsernames())
+	log.Printf("Usernames: %v", ctx.Value("test"))
 
 	return &desc.ChatCreateResponse{Id: gofakeit.Int64()}, nil
 }
